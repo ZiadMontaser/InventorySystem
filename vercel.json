@@ -9,9 +9,9 @@
     "routes" : [
         {
             "src": "/(.*)",
-            "dest": "./server/index.js"
+            "dest": "/server/index.js"
         }
     ],
-    "buildCommand": "cd client && npm run build && cd ..",
-    "installCommand": "cd server && npm install && cd ../client && npm install && cd .."
+    "buildCommand": "cd ../client && npm run build && cd ../server",
+    "installCommand": "npm install && cd ../client && npm install && cd ../server"
 }

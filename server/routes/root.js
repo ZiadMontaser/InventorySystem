@@ -6,7 +6,7 @@ const WebsiteRoot = path.resolve(__dirname + "/../../client/build");
 router.use(express.static(WebsiteRoot))
 
 router.get('/inventory', (req, res)=>{
-    console.log("DAsddads")
+
     res.sendFile(WebsiteRoot + '/index.html')});
 
 // router.get('/*', (req, res)=>{
