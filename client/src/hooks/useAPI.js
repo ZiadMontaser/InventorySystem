@@ -2,7 +2,7 @@ const { useState } = require("react");
 
 async function callAPIEndPoint(method, subDir, body, headers)  {
     const result = await fetch(
-        `/api/${subDir}`,
+        `https://inventory-system-server-woad.vercel.app/api/${subDir}`,
         {
             method: method,
             headers: {

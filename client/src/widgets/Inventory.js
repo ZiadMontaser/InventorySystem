@@ -9,7 +9,7 @@ const Inventory = () => {
     if(!sessionStorage.getItem('authorization')){
         navigator('/');
     }
-    const {refresh, data: items,setData: setItems, isPending, error } = useFetch(`/api/items`);
+    const {refresh, data: items,setData: setItems, isPending, error } = useFetch(`https://inventory-system-server-woad.vercel.app/api/items`);
     const isAdmin = Number(sessionStorage.getItem('isAdmin')) === 1;
 
     async function handleQuantityChange(id, change){
