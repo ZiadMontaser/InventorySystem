@@ -97,21 +97,25 @@
   margin: 0 auto;
 }
 
+.inventory .wait-screen{
+  align-content: center;
+  text-align: center;
+  height: 400px;
+}
+
 .inventory .inventory-items,
 .inventory .inventory-item{
   margin-top: 16px;
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-columns: 2fr 3fr 2fr ;
 
   font-weight: 600;
 
   align-items: center;
 }
 
-.inventory-item {
-  
-}
+
 
 .inventory .break-line{
   width: 100%;
@@ -132,10 +136,34 @@
   margin: 0 auto;
 }
 
+.inventory-item .quantity-element .delete-button{
+  background-color: red;
+  color: white;
+  
+}
+
+.inventory-item .quantity-element .delete-button:hover{
+  background-color: yellow;
+  color: black;
+  
+}
+
 .inventory .quantity-element button:hover{
   border: 1px solid white;
   background-color: blue;
   color: white;
+}
+
+.inventory .quantity-element .disabled-delete-button{
+  background-color: grey;
+  color: white;
+  border: 1px solid black;
+}
+
+.inventory .quantity-element .disabled-delete-button:hover{
+  background-color: grey;
+  color: white;
+  border: 1px solid black;
 }
 
 .inventory-items-input {

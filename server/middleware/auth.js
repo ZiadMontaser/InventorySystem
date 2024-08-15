@@ -20,7 +20,7 @@ const handleAuthCheck =  express().use(async (req, res, next) => {
         return res.sendStatus(400);
     }
     
-    const match = bcrypt.compare(password, foundUser.password);
+    const match = await bcrypt.compare(password, foundUser.password);
 
     if(!match){
         return res.sendStatus(401);

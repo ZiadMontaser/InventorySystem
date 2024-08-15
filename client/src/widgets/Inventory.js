@@ -20,6 +20,23 @@ const Inventory = () => {
         await callEndPoint('PATCH', `items/${newItems[id]._id}`, newItems[id])
     }
 
+    const [pendingADelete, setPendingADelete] = useState(false);
+
+    async function handleDeleteItem(id) {
+        setPendingADelete(true);
+        const newItems = [...items];
+        const item = newItems.splice(id, 1)
+
+        const res = await callEndPoint('DELETE', `items/${item._id}`);
+    
+        if(typeof res === 'boolean' && !res){
+            alert("Somthing went wrong");
+        }
+
+        setPendingADelete(false)
+        setItems(newItems);
+    }
+
     return ( 
         <div className="inventory">
             <h1>Inventory</h1>
@@ -30,10 +47,15 @@ const Inventory = () => {
                 <div>Type</div>
                 <div>Name</div>
                 <div>Quantity</div>
+                <div>Action</div>
             </div>
 
+            {isPending && <div className='wait-screen'>
+                <h3>Loading Data ...</h3>
+            </div>}
+
             {!isPending && items.map(({type, name, quantity}, index)=>
-                <div>
+                <div key={index}>
                     <div className="inventory-item">
                         <div>{type}</div>
                         <div>{name}</div>
@@ -41,6 +63,8 @@ const Inventory = () => {
                                 {isAdmin && <button onClick={()=>handleQuantityChange(index, -1)}> -1</button>}
                                 <div>{quantity}</div>
                                 {isAdmin && <button onClick={()=>handleQuantityChange(index, 1)}> +1</button>}
+                                {isAdmin && !pendingADelete && <button className='delete-button' onClick={()=>handleDeleteItem(index)}>Delete</button>}    
+                                {isAdmin &&  pendingADelete && <button className='disabled-delete-button' disabled >Delete</button>}    
                             </div>
                         </div>
                         <div className='break-line' />

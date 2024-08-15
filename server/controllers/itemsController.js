@@ -1,5 +1,5 @@
 const Item = require('../model/Item')
-
+const mongoose = require('mongoose');
 async function handleGetItems(req, res) {
     const result = await Item.find().exec();
         res.send(JSON.stringify(result));
@@ -23,7 +23,8 @@ async function handleUpdateItem (req,res) {
 }
 
 async function handleDeleteItem (req, res) {
-    await Item.deleteOne({_id: req.params.id})
+    await Item.findByIdAndDelete(req.params.id)
+    res.sendStatus(200);
 }
 
 module.exports = {handleGetItems, handleAddItem, handleUpdateItem, handleDeleteItem};
