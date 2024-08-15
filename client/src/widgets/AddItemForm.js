@@ -1,7 +1,7 @@
 import { useState } from "react";
 import callAPIEndPoint from "../hooks/useAPI";
 
-const AddItemForm = (refresh) => {
+const AddItemForm = ({refresh}) => {
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [type, setType] = useState('Mechanical Part');

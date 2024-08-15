@@ -6,7 +6,7 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   function refresh() {
-
+    console.log("Refresh list");
     const abortCont = new AbortController();
 
     fetch(url, {headers: {'authorization': `Basic ${sessionStorage.getItem('authorization')}`}}, { signal: abortCont.signal })
