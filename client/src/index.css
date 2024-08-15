@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: "M PLUS Rounded 1c";
+}
+
+.navbar{
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.navbar h1{
+  font-size: 20px;
+  color: blue;
+}
+
+.navbar .links{
+  /* margin-left: auto; */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.navbar a{
+  text-decoration: none;
+  margin: 8px;
+  color: black;
+  font-weight: 500;
+}
+
+.navbar button{
+  border: none;
+  padding: 8px;
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
+  margin-left: auto;
+  margin-right: 0;
+  cursor: pointer;
+
+  font-weight: 600;
+  border: 1px solid transparent;
+
+}
+
+.navbar button:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid blue;
+}
+
+/* Login page */
+
+.authpage{
+  max-width: 400px;
+  margin: 25px auto;
+}
+
+.authpage form{
+  display: flex;
+  flex-direction: column;
+}
+
+.authpage label {
+  margin-top: 8px;
+}
+.authpage h2 {
+  /* font-size: 20px; */
+  color: blue;
+  /* margin-bottom: 30px; */
+}
+
+.authpage button{
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+  padding: 8px;
+  max-width: 200px;
+  margin: 20px auto;
+  border-radius: 8px;
+  border-color: blue;
+
+  width: 100%;
+}
+
+.authpage a{
+  margin: 0 auto;
+  text-align: center;
+  color: black;
+}
+
+/*inventory page style*/
+
+.inventory {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inventory .inventory-items,
+.inventory .inventory-item{
+  margin-top: 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+
+  font-weight: 600;
+
+  align-items: center;
+}
+
+.inventory-item {
+  
+}
+
+.inventory .break-line{
+  width: 100%;
+  height: 2px;
+  background-color: rgb(148, 144, 144);
+  margin: 8px;
+}
+
+.inventory .quantity-element{
+  display: flex;
+  justify-content: center;
+}
+
+.inventory .quantity-element button{
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.inventory .quantity-element button:hover{
+  border: 1px solid white;
+  background-color: blue;
+  color: white;
+}
+
+.inventory-items-input {
+  border: black solid 1px;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.inventory-items-input form{
+  display: grid;
+  grid-template-columns: 1fr 4fr 60px;
+  gap: 10px;
+}
+
+.inventory-items-input input{
+  padding: 8px;
+}
+
+.inventory-items-input button{
+  grid-area: auto / 1 / span 1 / span 3;
+
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  border: rgb(176, 171, 171) solid 1px;
+
+  margin-top: 8px;
+
+}
