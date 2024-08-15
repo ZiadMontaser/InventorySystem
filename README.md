@@ -32,6 +32,13 @@ npm install
 cd ..
 ```
 
+## Steps for building
+Run the following commands in the root direcotory of the project
+```bash
+cd client
+npm run build
+```
+
 ## Steps for running
 
 To start the express server, run the following
