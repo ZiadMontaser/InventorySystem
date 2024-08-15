@@ -11,7 +11,5 @@
             "src": "/(.*)",
             "dest": "/server/index.js"
         }
-    ],
-    "buildCommand": "cd ../client && npm run build && cd ../server",
-    "installCommand": "npm install && cd ../client && npm install && cd ../server"
+    ]
 }
