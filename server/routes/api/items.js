@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const Item = require('../../model/Item')
-const {handleGetItems, handleAddItem, handleUpdateItem, handleDeleteItem} = require('../../controllers/registerController')
+const {handleGetItems, handleAddItem, handleUpdateItem, handleDeleteItem} = require('../../controllers/itemsController')
+
 router.route('/')
     .get(handleGetItems)
     .post(handleAddItem);
