@@ -23,9 +23,10 @@ const Inventory = () => {
     const [pendingADelete, setPendingADelete] = useState(false);
 
     async function handleDeleteItem(id) {
+        const item = items[id];
         setPendingADelete(true);
-        const newItems = [...items];
-        const item = newItems.splice(id, 1)
+
+        console.log(item._id)
 
         const res = await callEndPoint('DELETE', `items/${item._id}`);
     
@@ -33,8 +34,11 @@ const Inventory = () => {
             alert("Somthing went wrong");
         }
 
-        setPendingADelete(false)
+        const newItems = [...items];
+        newItems.splice(id, 1)
         setItems(newItems);
+
+        setPendingADelete(false)
     }
 
     return ( 
